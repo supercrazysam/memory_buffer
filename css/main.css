@@ -2730,27 +2730,27 @@
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #111111; /*#f2849e*/
+				background-color: #f2849e; /*#f2849e*/
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #111111;
+				background-color: #7ecaf6;
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #111111;
+				background-color: #7bd0c1;
 			}
 
 			.tiles article.style4 > .image:before {
-				background-color: #111111;
+				background-color: #c75b9b;
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #111111;
+				background-color: #ae85ca;
 			}
 
 			.tiles article.style6 > .image:before {
-				background-color: #111111;
+				background-color: #8499e7;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
