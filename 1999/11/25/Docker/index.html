@@ -145,6 +145,13 @@ https://github.com/fmidev/smartmet-server/wiki/Setting-up-Docker-and-Docker-Comp
 </ul>
 <hr>
 <p><a href="http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration" target="_blank" rel="noopener">http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration</a></p>
+<hr>
+<p>Error &amp; solutions</p>
+<p>Error:</p>
+<p>‘’’<br>stderr: nvidia-container-cli: requirement error: unsatisfied condition: cuda&gt;=10.1, please update your driver to a newer version, or use an earlier cuda container\\n\\”\””<br>‘’’</p>
+<p>Solution:</p>
+<p>You need to upgrade your graphic card driver. This is 9.0, not 8.0.<br>Or, you can use the nvidia/cuda:8.0-devel image and keep your driver.</p>
+<p><a href="https://github.com/NVIDIA/nvidia-docker/issues/543#issuecomment-345888252" target="_blank" rel="noopener">https://github.com/NVIDIA/nvidia-docker/issues/543#issuecomment-345888252</a></p>
 
 
 <!-- Tags -->
