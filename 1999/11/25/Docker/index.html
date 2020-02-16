@@ -145,6 +145,14 @@ https://github.com/fmidev/smartmet-server/wiki/Setting-up-Docker-and-Docker-Comp
 </ul>
 <hr>
 <p><a href="http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration" target="_blank" rel="noopener">http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration</a></p>
+<p>Step 1) use FROM to select a os base (e.g. nvidia-docker) =&gt; nvidia/cuda</p>
+<p>Step 2) add stuff on top of the os base (e.g. ROS) ; RUN to run as root; ENV to select environmental variables</p>
+<p>Step 3) use docker build to “compile” the modified os to a “image”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t org/repo:name .</span><br></pre></td></tr></table></figure>
+<p>Step 4) use docker run to run the image as a container</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name test -v /home/sam/Music/vivek:/root --gpus all -p 6000:6000 nvidia/cuda:9.0-devel</span><br></pre></td></tr></table></figure>
+<p>Step 5) use docker push to push the image to dockerhub, however only one repo is free</p>
+<p>docker container ls -a<br>docker image ls</p>
 <hr>
 <p>Error &amp; solutions</p>
 <p>Error:</p>
