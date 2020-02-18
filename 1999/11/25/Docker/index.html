@@ -151,6 +151,8 @@ https://github.com/fmidev/smartmet-server/wiki/Setting-up-Docker-and-Docker-Comp
 <p>stop all containers:<br>docker kill $(docker ps -q)</p>
 <p>remove all containers<br>docker rm $(docker ps -a -q)</p>
 <p>remove all docker images<br>docker rmi $(docker images -q)</p>
+<p>#######GOOD<br>ssh -X sam@localhost -p 6000<br>ssh -X root@localhost -p 6000<br>ssh -X normal@localhost -p 6000</p>
+<p>docker run -it –name test -v /home/sam/Music/vivek:/root –gpus all -p 6000:22 XXXXXXX</p>
 <hr>
 <p>Error &amp; solutions</p>
 <p>Error:</p>
