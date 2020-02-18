@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="Robotics">
+        <meta name="description" content="#Dependenciessudo apt-get updatesudo apt-get upgrade
+sudo apt-get install build-essential checkinstall cmake pkg-config yasmsudo apt-get install git g">
     
 
     <!--Author-->
@@ -18,7 +19,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Placeholder2">
+        <meta property="og:title" content="OpenCV">
     
 
     <!--Open Graph Site Name-->
@@ -31,7 +32,7 @@
 
     <!-- Title -->
     
-    <title>Placeholder2 - Sam&#39;s Memory Buffer</title>
+    <title>OpenCV - Sam&#39;s Memory Buffer</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../../../sass/main.css">
@@ -108,7 +109,7 @@
                 <!-- Main Content -->
                 
 
-    <h1>Placeholder2</h1>
+    <h1>OpenCV</h1>
 
 
     <span class="image main"><img src="https://picsum.photos/g/1300/500?random" alt=""></span>
@@ -118,11 +119,20 @@
 
 
 <!-- Content -->
-<hr>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> Robotics </li>
-</ul>
-<hr>
+<p>#Dependencies<br>sudo apt-get update<br>sudo apt-get upgrade</p>
+<p>sudo apt-get install build-essential checkinstall cmake pkg-config yasm<br>sudo apt-get install git gfortran<br>sudo apt-get install libjpeg8-dev libjasper-dev libpng12-dev</p>
+<h1 id="If-you-are-using-Ubuntu-16-04"><a href="#If-you-are-using-Ubuntu-16-04" class="headerlink" title="If you are using Ubuntu 16.04"></a>If you are using Ubuntu 16.04</h1><p>sudo apt-get install libtiff5-dev</p>
+<p>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev<br>sudo apt-get install libxine2-dev libv4l-dev<br>sudo apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev<br>sudo apt-get install qt5-default libgtk2.0-dev libtbb-dev<br>sudo apt-get install libatlas-base-dev<br>sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev<br>sudo apt-get install libvorbis-dev libxvidcore-dev<br>sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev<br>sudo apt-get install x264 v4l-utils</p>
+<h1 id="Optional-dependencies"><a href="#Optional-dependencies" class="headerlink" title="Optional dependencies"></a>Optional dependencies</h1><p>sudo apt-get install libprotobuf-dev protobuf-compiler<br>sudo apt-get install libgoogle-glog-dev libgflags-dev<br>sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen</p>
+<p>sudo apt-get install python-dev python-pip python3-dev python3-pip<br>sudo -H pip2 install -U pip numpy<br>sudo -H pip3 install -U pip numpy</p>
+<h1 id="Install-start"><a href="#Install-start" class="headerlink" title="Install start"></a>Install start</h1><p>cd /home/$USER/<br>mkdir /home/$USER/OPENCV_INSTALL</p>
+<p>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a><br>git clone <a href="https://github.com/opencv/opencv_contrib.git" target="_blank" rel="noopener">https://github.com/opencv/opencv_contrib.git</a></p>
+<p>mkdir /home/$USER/OPENCV_INSTALL/opencv/build<br>cd /home/$USER/OPENCV_INSTALL/opencv/build</p>
+<p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -</p>
+<p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=ON -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DENABLE_FAST_MATH=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DWITH_GSTREAMER=ON -DWITH_FFMPEG=ON -DCMAKE_BUILD_TYPE=RELEASE -DOPENCV_ENABLE_NONFREE:BOOL=ON -DCUDA_GENERATION=Auto ..</p>
+<p>#DCUDA_GENERATION=Kepler is ok   not sure if Auto ok</p>
+<h1 id="find-out-number-of-CPU-cores-in-your-machine"><a href="#find-out-number-of-CPU-cores-in-your-machine" class="headerlink" title="find out number of CPU cores in your machine"></a>find out number of CPU cores in your machine</h1><h1 id="nproc"><a href="#nproc" class="headerlink" title="nproc"></a>nproc</h1><h1 id="substitute-4-by-output-of-nproc"><a href="#substitute-4-by-output-of-nproc" class="headerlink" title="substitute 4 by output of nproc"></a>substitute 4 by output of nproc</h1><p>make -j$(nproc)<br>sudo make install<br>sudo sh -c ‘echo “/usr/local/lib” &gt;&gt; /etc/ld.so.conf.d/opencv.conf’<br>sudo ldconfig</p>
+<p>DCUDA_GENERATION=AUTO also ok??</p>
 
 
 <!-- Tags -->
