@@ -131,7 +131,29 @@ sudo apt-get install build-essential checkinstall cmake pkg-config yasmsudo apt-
 <p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -</p>
 <p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=ON -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DENABLE_FAST_MATH=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DWITH_GSTREAMER=ON -DWITH_FFMPEG=ON -DCMAKE_BUILD_TYPE=RELEASE -DOPENCV_ENABLE_NONFREE:BOOL=ON -DCUDA_GENERATION=Auto ..</p>
 <p>#DCUDA_GENERATION=Kepler is ok   not sure if Auto ok</p>
+<p>###################################################################</p>
+<p>#IF this fucking on9 error appear</p>
+<h2 id="–-NVIDIA-CUDA-NO"><a href="#–-NVIDIA-CUDA-NO" class="headerlink" title="–   NVIDIA CUDA:                   NO"></a>–   NVIDIA CUDA:                   NO</h2><p>–   cuDNN:                         NO</p>
+<p>– at: /home/sam/OPENCV_INSTALL/opencv/build/3rdparty/ippicv/ippicv_lnx/iw<br>CMake Warning at cmake/OpenCVFindLibsPerf.cmake:45 (message):<br>  OpenCV is not able to find/configure CUDA SDK (required by WITH_CUDA).</p>
+<p>  CUDA support will be disabled in OpenCV build.</p>
+<p>  To eliminate this warning remove WITH_CUDA=ON CMake configuration option.</p>
+<p>use this </p>
+<p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=ON -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so  -D CUDA_ARCH_BIN=5.0 5.2 5.3 6.0 6.1 7.0 7.5 -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DENABLE_FAST_MATH=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DWITH_GSTREAMER=ON -DWITH_FFMPEG=ON -DCMAKE_BUILD_TYPE=RELEASE -DOPENCV_ENABLE_NONFREE:BOOL=ON -DCUDA_GENERATION=Auto ..</p>
+<p>or</p>
+<p>cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=ON -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so  -D CUDA_ARCH_BIN=5.0 5.2 5.3 6.0 6.1 7.0 7.5 -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DENABLE_FAST_MATH=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DWITH_GSTREAMER=ON -DWITH_FFMPEG=ON -DCMAKE_BUILD_TYPE=RELEASE -DOPENCV_ENABLE_NONFREE:BOOL=ON -DCUDA_GENERATION=Auto ..</p>
+<p>########################################################################################################</p>
 <h1 id="find-out-number-of-CPU-cores-in-your-machine"><a href="#find-out-number-of-CPU-cores-in-your-machine" class="headerlink" title="find out number of CPU cores in your machine"></a>find out number of CPU cores in your machine</h1><h1 id="nproc"><a href="#nproc" class="headerlink" title="nproc"></a>nproc</h1><h1 id="substitute-4-by-output-of-nproc"><a href="#substitute-4-by-output-of-nproc" class="headerlink" title="substitute 4 by output of nproc"></a>substitute 4 by output of nproc</h1><p>make -j$(nproc)<br>sudo make install<br>sudo sh -c ‘echo “/usr/local/lib” &gt;&gt; /etc/ld.so.conf.d/opencv.conf’<br>sudo ldconfig</p>
+<p>End of opencv install</p>
+<p>######################################################################</p>
+<p>create the symbolic link sudo ln -s cuda-10.0 cuda</p>
+<p>goto ~./bashrc<br>export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}<br>export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH</p>
+<p>########################################################################################################</p>
+<p>If stupid error like this occur</p>
+<p>CMake Error at /usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake:137 (message):<br>  Could NOT find CUDA: Found unsuitable version “10.0”, but required is exact<br>  version “9.2” (found /usr/local/cuda-10.0)<br>Call Stack (most recent call first):<br>  /usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake:376 (_FPHSA_FAILURE_MESSAGE)<br>  /usr/share/cmake-3.10/Modules/FindCUDA.cmake:1080 (find_package_handle_standard_args)<br>  /usr/local/share/OpenCV/OpenCVConfig.cmake:86 (find_package)<br>  /usr/local/share/OpenCV/OpenCVConfig.cmake:105 (find_host_package)<br>  vision_opencv/cv_bridge/CMakeLists.txt:16 (find_package)</p>
+<p>– Configuring incomplete, errors occurred!<br>See also “/home/sam/proj/robot_software/catkin_ws/build/CMakeFiles/CMakeOutput.log”.<br>See also “/home/sam/proj/robot_software/catkin_ws/build/CMakeFiles/CMakeError.log”.</p>
+<p>see:<a href="https://forums.intel.com/s/question/0D50P00004NM0ZXSA1/make-install-error?language=en_US" target="_blank" rel="noopener">https://forums.intel.com/s/question/0D50P00004NM0ZXSA1/make-install-error?language=en_US</a></p>
+<p>I’ve resolved the problem. It was a cuda version problem of OPENCV. I modified /usr/local/share/OpenCV/OpenCVConfig.cmake: set(OpenCV_CUDA_VERSION “9.2”);</p>
+<p>After the modifcation, the make process of NCSDK succeed.</p>
 <p>DCUDA_GENERATION=AUTO also ok??</p>
 
 
