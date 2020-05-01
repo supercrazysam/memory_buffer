@@ -160,6 +160,7 @@ https://github.com/fmidev/smartmet-server/wiki/Setting-up-Docker-and-Docker-Comp
 <p>Solution:</p>
 <p>You need to upgrade your graphic card driver. This is 9.0, not 8.0.<br>Or, you can use the nvidia/cuda:8.0-devel image and keep your driver.</p>
 <p><a href="https://github.com/NVIDIA/nvidia-docker/issues/543#issuecomment-345888252" target="_blank" rel="noopener">https://github.com/NVIDIA/nvidia-docker/issues/543#issuecomment-345888252</a></p>
+<p>To use HOST usb cam<br>docker run -it –name test -v /home/sam/Music/vivek:/root –gpus all -p 6000:22 –device=/dev/video0:/dev/video0 supercrazysam/supercrazysam:thermal_yolo</p>
 
 
 <!-- Tags -->
