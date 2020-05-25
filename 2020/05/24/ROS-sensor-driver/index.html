@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="Install ros_bridge_suite first:
-git clone https://github.com/RobotWebTools/rosbridge_suite.gitsudo pip2.7 install tornadosudo pip2.7 install bson   (f">
+        <meta name="description" content="// these two lines contain the base64-encoded images to turn on- and off the application.
+      var RECORD_ON =&#34;data:image/png;base64,iVBORw0KGgoAAAAN">
     
 
     <!--Author-->
@@ -119,11 +119,6 @@ git clone https://github.com/RobotWebTools/rosbridge_suite.gitsudo pip2.7 instal
 
 
 <!-- Content -->
-<p>Install ros_bridge_suite first:</p>
-<p>git clone <a href="https://github.com/RobotWebTools/rosbridge_suite.git" target="_blank" rel="noopener">https://github.com/RobotWebTools/rosbridge_suite.git</a><br>sudo pip2.7 install tornado<br>sudo pip2.7 install bson   (fucking rubbish doesnot work alone, need pymongo)<br>sudo pip2.7 install pymongo<br>roslaunch rosbridge_server rosbridge_websocket.launch</p>
-<p>Even the sensor driver can be locally on PC, does not mean it can run on phone<br>for phone to connect…</p>
-<p>Need to override the check_origin() function in tornado.websocket,<br>it is a bullshit security function that prevent other source blah blah blah…<br>which cause other device cannot connect</p>
-<p>Goto /usr/local/lib/python2.7/dist-packages/tornado<br>Find the file websocket.py  and override the function check_origin() to always return True</p>
 <p><meta content="text/html;charset=utf-8" http-equiv="Content-Type"></p>
 <meta content="utf-8" http-equiv="encoding">
 
@@ -349,6 +344,14 @@ if (navigator.mediaDevices.getUserMedia) {
   }, false);
 </script>
 
+
+
+
+<p>Install ros_bridge_suite first:</p>
+<p>git clone <a href="https://github.com/RobotWebTools/rosbridge_suite.git" target="_blank" rel="noopener">https://github.com/RobotWebTools/rosbridge_suite.git</a><br>sudo pip2.7 install tornado<br>sudo pip2.7 install bson   (fucking rubbish doesnot work alone, need pymongo)<br>sudo pip2.7 install pymongo<br>roslaunch rosbridge_server rosbridge_websocket.launch</p>
+<p>Even the sensor driver can be locally on PC, does not mean it can run on phone<br>for phone to connect…</p>
+<p>Need to override the check_origin() function in tornado.websocket,<br>it is a bullshit security function that prevent other source blah blah blah…<br>which cause other device cannot connect</p>
+<p>Goto /usr/local/lib/python2.7/dist-packages/tornado<br>Find the file websocket.py  and override the function check_origin() to always return True</p>
 
 
 <!-- Tags -->
